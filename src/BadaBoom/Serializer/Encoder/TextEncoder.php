@@ -31,6 +31,10 @@ class TextEncoder implements EncoderInterface
     {
         $text = '';
         foreach ($value as $key => $value) {
+            if (is_array($value)) {
+                $text .= $this->encodeArray($value);
+                continue;
+            }
             $value = (string) $value;
             $value = trim($value);
 
