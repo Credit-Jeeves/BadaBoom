@@ -92,11 +92,11 @@ class LineEncoder implements EncoderInterface, NormalizationAwareInterface
     }
 
     /**
-     * @param \Exception $exception
+     * @param \Throwable $exception
      * 
      * @return string
      */
-    protected function getShortClassName(\Exception $exception)
+    protected function getShortClassName(\Throwable $exception)
     {
         $ro = new \ReflectionObject($exception);
         
