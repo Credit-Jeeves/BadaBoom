@@ -42,11 +42,11 @@ class DuplicateExceptionFilter extends AbstractFilter
     }
 
     /**
-     * @param \Exception $exception
+     * @param \Throwable $exception
      * 
      * @return string
      */
-    public function generateCacheId(\Exception $exception)
+    public function generateCacheId(\Throwable $exception)
     {
         return md5(get_class($exception) . $exception->getFile() . $exception->getLine());
     }

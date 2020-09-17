@@ -26,7 +26,7 @@ class SafeChainNodeDecorator implements ChainNodeInterface
     {
         try {
             $this->chainNode->handle($context);
-        } catch (\Exception $internalException) {
+        } catch (\Throwable $internalException) {
             $chainExceptions = $context->getVar('chain_exceptions', array());
 
             $chainExceptions[] = array(

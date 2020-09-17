@@ -8,7 +8,7 @@ namespace BadaBoom;
 class Context implements \IteratorAggregate 
 {
     /**
-     * @var \Exception
+     * @var \Throwable
      */
     protected $exception;
 
@@ -17,14 +17,14 @@ class Context implements \IteratorAggregate
      */
     protected $vars;
     
-    public function __construct(\Exception $exception, array $vars = array()) 
+    public function __construct(\Throwable $exception, array $vars = array())
     {
         $this->exception = $exception;
         $this->vars = $vars;
     }
 
     /**
-     * @return \Exception
+     * @return \Throwable
      */
     public function getException()
     {

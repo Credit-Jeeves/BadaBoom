@@ -52,11 +52,11 @@ class ExceptionSummaryProvider extends AbstractProvider
     }
 
     /**
-     * @param \Exception $exception
+     * @param \Throwable $exception
      *
      * @return int|string
      */
-    protected function getCode(\Exception $exception)
+    protected function getCode(\Throwable $exception)
     {
         return $exception instanceof \ErrorException ?
             $this->getHumanErrorCode($exception->getSeverity()) :
